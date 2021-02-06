@@ -11,7 +11,8 @@
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 
-;; setup Evil Mode
+;;;;;;;;;;;;
+;; evil mode
 (straight-use-package 'evil)
 (setq evil-want-C-u-scroll 1)
 (setq evil-want-C-i-jump nil)
@@ -25,10 +26,12 @@
 (evil-collection-init)
 
 ;;;;;;;;;;;;
-;; setup theme
+;; theme
 (straight-use-package 'gruvbox-theme)
 (load-theme 'gruvbox-light-medium)
 
+;;;;;;;;;;;;
+;; window cycling
 (global-set-key (kbd "M-w") 'other-window)
 (global-set-key (kbd "M-W") (lambda() (interactive) (other-window -1)))
 
@@ -36,19 +39,18 @@
 ;; FONT
 (set-frame-font "Liberation Mono" nil t)
 
+;;;;;;;;;;;;
+;; default settings
 (tool-bar-mode 0)
 (scroll-bar-mode 0)
 (menu-bar-mode 0)
 (setq visible-bell 1)
 
-;; setup helm
+;;;;;;;;;;;;
+;; helm / projectile
 (straight-use-package 'helm)
 (straight-use-package 'helm-projectile)
 (require 'helm)
-
-;;;;;;;;;;;;;;;;;;;;
-;; Projectile
-;;;;;;;;;;;;;;;;;;;;
 (straight-use-package 'projectile)
 (projectile-global-mode)
 (setq projectile-indexing-method 'native)
@@ -69,12 +71,20 @@
 (global-set-key (kbd "C-=") 'zoom-frm-in)
 (global-set-key (kbd "C--") 'zoom-frm-out)
 
+;;;;;;;;;;;;
 ;; dired x
 (load "dired-x")
 
+;;;;;;;;;;;;
 ;; magit
 (straight-use-package 'magit)
 
+;;;;;;;;;;;;
+;; Autosave
+(setq backup-directory-alist
+      `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
 
 
 (custom-set-variables
