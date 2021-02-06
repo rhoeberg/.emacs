@@ -45,6 +45,7 @@
 (scroll-bar-mode 0)
 (menu-bar-mode 0)
 (setq visible-bell 1)
+(global-set-key (kbd "C-s") 'save-buffer)
 
 ;;;;;;;;;;;;
 ;; helm / projectile
