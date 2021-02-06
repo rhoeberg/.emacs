@@ -1,1 +1,1 @@
-# simple and productive emacs setup
+# simpel and productive emacs setup for c/c++
