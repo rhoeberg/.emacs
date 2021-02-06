@@ -87,6 +87,10 @@
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
 
+;;;;;;;;;;;;
+;; format
+(setq-default tab-width 4)
+(setq-default c-basic-offset 4)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
