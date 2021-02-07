@@ -14,6 +14,7 @@
 ;;;;;;;;;;;;
 ;; evil mode
 (straight-use-package 'evil)
+(setq evil-want-keybinding nil) ;; hack that fixes evil-collection bug: https://github.com/emacs-evil/evil-collection/issues/60
 (setq evil-want-C-u-scroll 1)
 (setq evil-want-C-i-jump nil)
 (require 'evil)
@@ -28,7 +29,7 @@
 ;;;;;;;;;;;;
 ;; theme
 (straight-use-package 'gruvbox-theme)
-(load-theme 'gruvbox-light-medium)
+(load-theme 'gruvbox-light-medium t)
 
 ;;;;;;;;;;;;
 ;; window cycling
@@ -91,17 +92,3 @@
 ;; format
 (setq-default tab-width 4)
 (setq-default c-basic-offset 4)
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   '("124562b3366c81b85594feba32564cdb14fc053232511369f40a3e5535dac742" "6f358ac456ee889d132b784afaaa1ce0bd9bdfafc89ef6e3fd5e22179ef59905" "d29324c9e80f48dcd2d5649a06de9065b8db979142b667252fdeba1b1fd094c9" "11d9dcf9150178e21b13ac54aa9a08eb72eb0a90605530dd5f25c89707c6a238" "729ddf899d07810d66fb6bd048b1cbef228efbcee0dca69d3d6cd0efcff428e1" default)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
