@@ -92,3 +92,7 @@
 ;; format
 (setq-default tab-width 4)
 (setq-default c-basic-offset 4)
+
+;;;;;;;;;;;;
+;; LANGUAGE ASSOCIATIONS
+(add-to-list 'auto-mode-alist '("\\.cl\\'" . c-mode))
